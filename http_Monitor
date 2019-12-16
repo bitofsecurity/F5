@@ -1,0 +1,11 @@
+## Request: 
+GET http://www.somesite.com HTTP/1.0\r\nConnection:Close
+## Response:
+HTTP/1.. (200|301|302)
+## Public Site Config:
+## Interval: 30 sec
+## Timeout: 31 sec
+## Else you get blocked 
+## Important: Use HTTP/1.0 that doesn't keep session open. It's cleaner for HTTP Monitoring. 
+## Use 4 HTTP Monitors on your Pool and the pool config so that the nodes are marked up if 2 out of 5 is up. Create an ICMP monitor to monitor 
+## your proxies, in that way you have at least 1 HTTP and 1 ICMP monitor enabled. 
